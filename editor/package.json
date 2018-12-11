@@ -1,0 +1,26 @@
+{
+  "name": "cosanum-inventory",
+  "version": "1.0.0",
+  "description": "cosanum inventory",
+  "main": "index.js",
+  "scripts": {
+    "editor": "npx karma-editor build && KARMA_DATA_URL=http://localhost:8005 npx karma-editor server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dudagroup/cosanum-inventory.git"
+  },
+  "keywords": [
+    "cosanum"
+  ],
+  "author": "denis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dudagroup/cosanum-inventory/issues"
+  },
+  "homepage": "https://github.com/dudagroup/cosanum-inventory",
+  "dependencies": {
+    "@karma.run/editor": "0.14.3",
+    "@types/node": "10.11.6"
+  }
+}

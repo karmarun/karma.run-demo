@@ -1,0 +1,4751 @@
+[
+  {
+    "model": [
+      "WvvglNnBnAcgvyNj",
+      "CUazrvknEWbKcroB"
+    ],
+    "color": "#E4E6B3",
+    "name": "Translations",
+    "slug": "translations",
+    "field": {
+      "type": "struct",
+      "label": "Translations",
+      "fields": [
+        [
+          "internalDescription",
+          {
+            "type": "string",
+            "label": "Internal Description"
+          }
+        ],
+        [
+          "projectId",
+          {
+            "type": "string",
+            "label": "Project Id"
+          }
+        ],
+        [
+          "translations",
+          {
+            "type": "map",
+            "label": "Translations",
+            "field": {
+              "type": "map",
+              "field": {
+                "type": "string"
+              }
+            }
+          }
+        ]
+      ]
+    },
+    "displayKeyPaths": [
+      [
+        "internalDescription"
+      ]
+    ]
+  },
+  {
+    "model": [
+      "WvvglNnBnAcgvyNj",
+      "MXrcAogbAcQAJzgc"
+    ],
+    "color": "#E6B3D5",
+    "name": "Prices",
+    "slug": "prices",
+    "field": {
+      "type": "struct",
+      "label": "Prices",
+      "fields": [
+        [
+          "client",
+          {
+            "type": "ref",
+            "model": [
+              "WvvglNnBnAcgvyNj",
+              "eLGNWcSGoLTRdHYE"
+            ],
+            "label": "Client"
+          }
+        ],
+        [
+          "clientId",
+          {
+            "type": "string",
+            "label": "Client Id"
+          }
+        ],
+        [
+          "id",
+          {
+            "type": "string",
+            "label": "Id"
+          }
+        ],
+        [
+          "priceList",
+          {
+            "type": "map",
+            "label": "Price List",
+            "field": {
+              "type": "struct",
+              "fields": [
+                [
+                  "retailPrice",
+                  {
+                    "type": "number",
+                    "storageType": "float",
+                    "label": "Retail Price"
+                  }
+                ]
+              ]
+            }
+          }
+        ]
+      ]
+    },
+    "displayKeyPaths": []
+  },
+  {
+    "model": [
+      "WvvglNnBnAcgvyNj",
+      "PBtpnowKPwevOpfq"
+    ],
+    "color": "#CAE6B3",
+    "name": "Manufacturer",
+    "slug": "manufacturer",
+    "field": {
+      "type": "struct",
+      "label": "Manufacturer",
+      "fields": [
+        [
+          "id",
+          {
+            "type": "string",
+            "label": "Id"
+          }
+        ],
+        [
+          "isDeleted",
+          {
+            "type": "bool",
+            "label": "Is Deleted"
+          }
+        ],
+        [
+          "name",
+          {
+            "type": "string",
+            "label": "Name"
+          }
+        ]
+      ]
+    },
+    "displayKeyPaths": [
+      [
+        "name"
+      ]
+    ]
+  },
+  {
+    "model": [
+      "WvvglNnBnAcgvyNj",
+      "UTuzOLbSuvFKpQye"
+    ],
+    "color": "#C1B3E6",
+    "name": "Migration",
+    "slug": "_migration",
+    "field": {
+      "type": "list",
+      "label": "Migration",
+      "field": {
+        "type": "struct",
+        "fields": [
+          [
+            "expression",
+            {
+              "type": "union",
+              "label": "Expression",
+              "fields": [
+                [
+                  "auto",
+                  "Auto",
+                  {
+                    "type": "struct",
+                    "label": "Auto",
+                    "fields": []
+                  }
+                ],
+                [
+                  "manual",
+                  "Manual",
+                  {
+                    "type": "ref",
+                    "model": [
+                      "WvvglNnBnAcgvyNj",
+                      "uzIPZOqfqxvVVckk"
+                    ],
+                    "label": "Manual"
+                  }
+                ]
+              ]
+            }
+          ],
+          [
+            "source",
+            {
+              "type": "ref",
+              "model": [
+                "WvvglNnBnAcgvyNj",
+                "WvvglNnBnAcgvyNj"
+              ],
+              "label": "Source"
+            }
+          ],
+          [
+            "target",
+            {
+              "type": "ref",
+              "model": [
+                "WvvglNnBnAcgvyNj",
+                "WvvglNnBnAcgvyNj"
+              ],
+              "label": "Target"
+            }
+          ]
+        ]
+      }
+    },
+    "displayKeyPaths": []
+  },
+  {
+    "model": [
+      "WvvglNnBnAcgvyNj",
+      "VRxArjdqXAgpxTEr"
+    ],
+    "color": "#B3D3E6",
+    "name": "User",
+    "slug": "_user",
+    "field": {
+      "type": "struct",
+      "label": "User",
+      "fields": [
+        [
+          "username",
+          {
+            "type": "string",
+            "label": "Username"
+          }
+        ],
+        [
+          "password",
+          {
+            "type": "password",
+            "label": "Password"
+          }
+        ],
+        [
+          "roles",
+          {
+            "type": "list",
+            "label": "Roles",
+            "field": {
+              "type": "ref",
+              "model": [
+                "WvvglNnBnAcgvyNj",
+                "uqqNIIeFewIQCNXt"
+              ]
+            }
+          }
+        ]
+      ]
+    },
+    "displayKeyPaths": [
+      [
+        "username"
+      ]
+    ]
+  },
+  {
+    "model": [
+      "WvvglNnBnAcgvyNj",
+      "WvvglNnBnAcgvyNj"
+    ],
+    "color": "#C8E6B3",
+    "name": "Model",
+    "slug": "_model",
+    "field": {
+      "type": "recursion",
+      "recursionLabel": "model",
+      "field": {
+        "type": "union",
+        "fields": [
+          [
+            "annotation",
+            "Annotation",
+            {
+              "type": "struct",
+              "label": "Annotation",
+              "fields": [
+                [
+                  "model",
+                  {
+                    "type": "recurse",
+                    "recursionLabel": "model",
+                    "label": "Model"
+                  }
+                ],
+                [
+                  "value",
+                  {
+                    "type": "string",
+                    "label": "Value"
+                  }
+                ]
+              ]
+            }
+          ],
+          [
+            "bool",
+            "Bool",
+            {
+              "type": "struct",
+              "label": "Bool",
+              "fields": []
+            }
+          ],
+          [
+            "dateTime",
+            "Date Time",
+            {
+              "type": "struct",
+              "label": "Date Time",
+              "fields": []
+            }
+          ],
+          [
+            "enum",
+            "Enum",
+            {
+              "type": "set",
+              "label": "Enum",
+              "field": {
+                "type": "string"
+              }
+            }
+          ],
+          [
+            "float",
+            "Float",
+            {
+              "type": "struct",
+              "label": "Float",
+              "fields": []
+            }
+          ],
+          [
+            "int16",
+            "Int16",
+            {
+              "type": "struct",
+              "label": "Int16",
+              "fields": []
+            }
+          ],
+          [
+            "int32",
+            "Int32",
+            {
+              "type": "struct",
+              "label": "Int32",
+              "fields": []
+            }
+          ],
+          [
+            "int64",
+            "Int64",
+            {
+              "type": "struct",
+              "label": "Int64",
+              "fields": []
+            }
+          ],
+          [
+            "int8",
+            "Int8",
+            {
+              "type": "struct",
+              "label": "Int8",
+              "fields": []
+            }
+          ],
+          [
+            "list",
+            "List",
+            {
+              "type": "recurse",
+              "recursionLabel": "model",
+              "label": "List"
+            }
+          ],
+          [
+            "map",
+            "Map",
+            {
+              "type": "recurse",
+              "recursionLabel": "model",
+              "label": "Map"
+            }
+          ],
+          [
+            "null",
+            "Null",
+            {
+              "type": "struct",
+              "label": "Null",
+              "fields": []
+            }
+          ],
+          [
+            "optional",
+            "Optional",
+            {
+              "type": "recurse",
+              "recursionLabel": "model",
+              "label": "Optional"
+            }
+          ],
+          [
+            "recurse",
+            "Recurse",
+            {
+              "type": "string",
+              "label": "Recurse"
+            }
+          ],
+          [
+            "recursion",
+            "Recursion",
+            {
+              "type": "struct",
+              "label": "Recursion",
+              "fields": [
+                [
+                  "label",
+                  {
+                    "type": "string",
+                    "label": "Label"
+                  }
+                ],
+                [
+                  "model",
+                  {
+                    "type": "recurse",
+                    "recursionLabel": "model",
+                    "label": "Model"
+                  }
+                ]
+              ]
+            }
+          ],
+          [
+            "recursive",
+            "Recursive",
+            {
+              "type": "struct",
+              "label": "Recursive",
+              "fields": [
+                [
+                  "models",
+                  {
+                    "type": "map",
+                    "label": "Models",
+                    "field": {
+                      "type": "recurse",
+                      "recursionLabel": "model"
+                    }
+                  }
+                ],
+                [
+                  "top",
+                  {
+                    "type": "string",
+                    "label": "Top"
+                  }
+                ]
+              ]
+            }
+          ],
+          [
+            "ref",
+            "Ref",
+            {
+              "type": "ref",
+              "model": [
+                "WvvglNnBnAcgvyNj",
+                "WvvglNnBnAcgvyNj"
+              ],
+              "label": "Ref"
+            }
+          ],
+          [
+            "set",
+            "Set",
+            {
+              "type": "recurse",
+              "recursionLabel": "model",
+              "label": "Set"
+            }
+          ],
+          [
+            "string",
+            "String",
+            {
+              "type": "struct",
+              "label": "String",
+              "fields": []
+            }
+          ],
+          [
+            "struct",
+            "Struct",
+            {
+              "type": "map",
+              "label": "Struct",
+              "field": {
+                "type": "recurse",
+                "recursionLabel": "model"
+              }
+            }
+          ],
+          [
+            "tuple",
+            "Tuple",
+            {
+              "type": "list",
+              "label": "Tuple",
+              "field": {
+                "type": "recurse",
+                "recursionLabel": "model"
+              }
+            }
+          ],
+          [
+            "uint16",
+            "Uint16",
+            {
+              "type": "struct",
+              "label": "Uint16",
+              "fields": []
+            }
+          ],
+          [
+            "uint32",
+            "Uint32",
+            {
+              "type": "struct",
+              "label": "Uint32",
+              "fields": []
+            }
+          ],
+          [
+            "uint64",
+            "Uint64",
+            {
+              "type": "struct",
+              "label": "Uint64",
+              "fields": []
+            }
+          ],
+          [
+            "uint8",
+            "Uint8",
+            {
+              "type": "struct",
+              "label": "Uint8",
+              "fields": []
+            }
+          ],
+          [
+            "union",
+            "Union",
+            {
+              "type": "map",
+              "label": "Union",
+              "field": {
+                "type": "recurse",
+                "recursionLabel": "model"
+              }
+            }
+          ],
+          [
+            "unique",
+            "Unique",
+            {
+              "type": "recurse",
+              "recursionLabel": "model",
+              "label": "Unique"
+            }
+          ]
+        ]
+      }
+    },
+    "displayKeyPaths": []
+  },
+  {
+    "model": [
+      "WvvglNnBnAcgvyNj",
+      "YBNCxOrGaFpBqQlp"
+    ],
+    "color": "#E6B3DB",
+    "name": "Branch",
+    "slug": "branch",
+    "field": {
+      "type": "struct",
+      "label": "Branch",
+      "fields": [
+        [
+          "address",
+          {
+            "type": "string",
+            "label": "Address"
+          }
+        ],
+        [
+          "addressAddition",
+          {
+            "type": "string",
+            "label": "Address Addition"
+          }
+        ],
+        [
+          "city",
+          {
+            "type": "string",
+            "label": "City"
+          }
+        ],
+        [
+          "client",
+          {
+            "type": "ref",
+            "model": [
+              "WvvglNnBnAcgvyNj",
+              "eLGNWcSGoLTRdHYE"
+            ],
+            "label": "Client"
+          }
+        ],
+        [
+          "id",
+          {
+            "type": "string",
+            "label": "Id"
+          }
+        ],
+        [
+          "lastLogin",
+          {
+            "type": "optional",
+            "label": "Last Login",
+            "field": {
+              "type": "dateTime"
+            }
+          }
+        ],
+        [
+          "name",
+          {
+            "type": "string",
+            "label": "Name"
+          }
+        ],
+        [
+          "nameAddition",
+          {
+            "type": "string",
+            "label": "Name Addition"
+          }
+        ],
+        [
+          "password",
+          {
+            "type": "string",
+            "label": "Password"
+          }
+        ],
+        [
+          "plz",
+          {
+            "type": "string",
+            "label": "Plz"
+          }
+        ]
+      ]
+    },
+    "displayKeyPaths": [
+      [
+        "name"
+      ],
+      [
+        "nameAddition"
+      ]
+    ]
+  },
+  {
+    "model": [
+      "WvvglNnBnAcgvyNj",
+      "dWVihlUXxAFlDhnS"
+    ],
+    "color": "#E6D2B3",
+    "name": "Article",
+    "slug": "article",
+    "field": {
+      "type": "struct",
+      "label": "Article",
+      "fields": [
+        [
+          "applicationArea",
+          {
+            "type": "optional",
+            "label": "Application Area",
+            "field": {
+              "type": "ref",
+              "model": [
+                "WvvglNnBnAcgvyNj",
+                "hIJLjhKHQTfcgItk"
+              ]
+            }
+          }
+        ],
+        [
+          "dimensions",
+          {
+            "type": "list",
+            "label": "Dimensions",
+            "field": {
+              "type": "struct",
+              "fields": [
+                [
+                  "GTNI",
+                  {
+                    "type": "string",
+                    "label": "G T N I"
+                  }
+                ],
+                [
+                  "code",
+                  {
+                    "type": "string",
+                    "label": "Code"
+                  }
+                ],
+                [
+                  "description",
+                  {
+                    "type": "string",
+                    "label": "Description"
+                  }
+                ],
+                [
+                  "id",
+                  {
+                    "type": "string",
+                    "label": "Id"
+                  }
+                ],
+                [
+                  "quantity",
+                  {
+                    "type": "number",
+                    "storageType": "int32",
+                    "label": "Quantity"
+                  }
+                ]
+              ]
+            }
+          }
+        ],
+        [
+          "i18n",
+          {
+            "type": "map",
+            "label": "I18n",
+            "field": {
+              "type": "struct",
+              "fields": [
+                [
+                  "description",
+                  {
+                    "type": "string",
+                    "label": "Description"
+                  }
+                ]
+              ]
+            }
+          }
+        ],
+        [
+          "id",
+          {
+            "type": "string",
+            "label": "Id"
+          }
+        ],
+        [
+          "idManufacturer",
+          {
+            "type": "string",
+            "label": "Id Manufacturer"
+          }
+        ],
+        [
+          "itemUnit",
+          {
+            "type": "enum",
+            "label": "Item Unit",
+            "options": [
+              [
+                "Kan",
+                "Kan"
+              ],
+              [
+                "Pack",
+                "Pack"
+              ],
+              [
+                "Kar",
+                "Kar"
+              ],
+              [
+                "kg",
+                "Kg"
+              ],
+              [
+                "Stk",
+                "Stk"
+              ],
+              [
+                "Stück",
+                "Stück"
+              ],
+              [
+                "Paar",
+                "Paar"
+              ],
+              [
+                "Box",
+                "Box"
+              ],
+              [
+                "Artikeleinheit",
+                "Artikeleinheit"
+              ],
+              [
+                "",
+                ""
+              ],
+              [
+                "Btl",
+                "Btl"
+              ],
+              [
+                "Rol.",
+                "Rol."
+              ],
+              [
+                "m",
+                "M"
+              ]
+            ]
+          }
+        ],
+        [
+          "manufacturer",
+          {
+            "type": "optional",
+            "label": "Manufacturer",
+            "field": {
+              "type": "ref",
+              "model": [
+                "WvvglNnBnAcgvyNj",
+                "PBtpnowKPwevOpfq"
+              ]
+            }
+          }
+        ],
+        [
+          "minimumOrderQuantity",
+          {
+            "type": "number",
+            "storageType": "int32",
+            "label": "Minimum Order Quantity"
+          }
+        ],
+        [
+          "priceUnitQuantity",
+          {
+            "type": "number",
+            "storageType": "int32",
+            "label": "Price Unit Quantity"
+          }
+        ]
+      ]
+    },
+    "displayKeyPaths": []
+  },
+  {
+    "model": [
+      "WvvglNnBnAcgvyNj",
+      "eLGNWcSGoLTRdHYE"
+    ],
+    "color": "#E6BDB3",
+    "name": "Client",
+    "slug": "client",
+    "field": {
+      "type": "struct",
+      "label": "Client",
+      "fields": [
+        [
+          "id",
+          {
+            "type": "string",
+            "label": "Id"
+          }
+        ],
+        [
+          "name",
+          {
+            "type": "string",
+            "label": "Name"
+          }
+        ],
+        [
+          "password",
+          {
+            "type": "string",
+            "label": "Password"
+          }
+        ]
+      ]
+    },
+    "displayKeyPaths": [
+      [
+        "name"
+      ]
+    ]
+  },
+  {
+    "model": [
+      "WvvglNnBnAcgvyNj",
+      "hIJLjhKHQTfcgItk"
+    ],
+    "color": "#D1B3E6",
+    "name": "Application Area",
+    "slug": "applicationarea",
+    "field": {
+      "type": "struct",
+      "label": "Application Area",
+      "fields": [
+        [
+          "i18n",
+          {
+            "type": "map",
+            "label": "I18n",
+            "field": {
+              "type": "struct",
+              "fields": [
+                [
+                  "name",
+                  {
+                    "type": "string",
+                    "label": "Name"
+                  }
+                ]
+              ]
+            }
+          }
+        ],
+        [
+          "id",
+          {
+            "type": "string",
+            "label": "Id"
+          }
+        ]
+      ]
+    },
+    "displayKeyPaths": []
+  },
+  {
+    "model": [
+      "WvvglNnBnAcgvyNj",
+      "hSOtugguXLTRxrVK"
+    ],
+    "color": "#C0E6B3",
+    "name": "Inventory",
+    "slug": "inventory",
+    "field": {
+      "type": "struct",
+      "label": "Inventory",
+      "fields": [
+        [
+          "activationDate",
+          {
+            "type": "optional",
+            "label": "Activation Date",
+            "field": {
+              "type": "dateTime"
+            }
+          }
+        ],
+        [
+          "branch",
+          {
+            "type": "ref",
+            "model": [
+              "WvvglNnBnAcgvyNj",
+              "YBNCxOrGaFpBqQlp"
+            ],
+            "label": "Branch"
+          }
+        ],
+        [
+          "completionDate",
+          {
+            "type": "optional",
+            "label": "Completion Date",
+            "field": {
+              "type": "dateTime"
+            }
+          }
+        ],
+        [
+          "id",
+          {
+            "type": "string",
+            "label": "Id"
+          }
+        ],
+        [
+          "lastImportDate",
+          {
+            "type": "dateTime",
+            "label": "Last Import Date"
+          }
+        ],
+        [
+          "list",
+          {
+            "type": "list",
+            "label": "List",
+            "field": {
+              "type": "struct",
+              "fields": [
+                [
+                  "article",
+                  {
+                    "type": "ref",
+                    "model": [
+                      "WvvglNnBnAcgvyNj",
+                      "dWVihlUXxAFlDhnS"
+                    ],
+                    "label": "Article"
+                  }
+                ],
+                [
+                  "articleId",
+                  {
+                    "type": "string",
+                    "label": "Article Id"
+                  }
+                ],
+                [
+                  "data",
+                  {
+                    "type": "optional",
+                    "label": "Data",
+                    "field": {
+                      "type": "struct",
+                      "fields": [
+                        [
+                          "dimensions",
+                          {
+                            "type": "list",
+                            "label": "Dimensions",
+                            "field": {
+                              "type": "struct",
+                              "fields": [
+                                [
+                                  "GTNI",
+                                  {
+                                    "type": "string",
+                                    "label": "G T N I"
+                                  }
+                                ],
+                                [
+                                  "code",
+                                  {
+                                    "type": "string",
+                                    "label": "Code"
+                                  }
+                                ],
+                                [
+                                  "description",
+                                  {
+                                    "type": "string",
+                                    "label": "Description"
+                                  }
+                                ],
+                                [
+                                  "id",
+                                  {
+                                    "type": "string",
+                                    "label": "Id"
+                                  }
+                                ],
+                                [
+                                  "quantity",
+                                  {
+                                    "type": "number",
+                                    "storageType": "int32",
+                                    "label": "Quantity"
+                                  }
+                                ],
+                                [
+                                  "stock",
+                                  {
+                                    "type": "number",
+                                    "storageType": "int32",
+                                    "label": "Stock"
+                                  }
+                                ]
+                              ]
+                            }
+                          }
+                        ],
+                        [
+                          "priceUnitQuantity",
+                          {
+                            "type": "number",
+                            "storageType": "int32",
+                            "label": "Price Unit Quantity"
+                          }
+                        ],
+                        [
+                          "retailPrice",
+                          {
+                            "type": "number",
+                            "storageType": "float",
+                            "label": "Retail Price"
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                ]
+              ]
+            }
+          }
+        ],
+        [
+          "quarter",
+          {
+            "type": "number",
+            "storageType": "uint8",
+            "label": "Quarter"
+          }
+        ],
+        [
+          "quartersSinceYear0",
+          {
+            "type": "number",
+            "storageType": "int32",
+            "label": "Quarters Since Year0"
+          }
+        ],
+        [
+          "year",
+          {
+            "type": "number",
+            "storageType": "uint16",
+            "label": "Year"
+          }
+        ]
+      ]
+    },
+    "displayKeyPaths": []
+  },
+  {
+    "model": [
+      "WvvglNnBnAcgvyNj",
+      "uqqNIIeFewIQCNXt"
+    ],
+    "color": "#E6B3DA",
+    "name": "Role",
+    "slug": "_role",
+    "field": {
+      "type": "struct",
+      "label": "Role",
+      "fields": [
+        [
+          "name",
+          {
+            "type": "string",
+            "label": "Name"
+          }
+        ],
+        [
+          "permissions",
+          {
+            "type": "struct",
+            "label": "Permissions",
+            "fields": [
+              [
+                "create",
+                {
+                  "type": "ref",
+                  "model": [
+                    "WvvglNnBnAcgvyNj",
+                    "uzIPZOqfqxvVVckk"
+                  ],
+                  "label": "Create"
+                }
+              ],
+              [
+                "delete",
+                {
+                  "type": "ref",
+                  "model": [
+                    "WvvglNnBnAcgvyNj",
+                    "uzIPZOqfqxvVVckk"
+                  ],
+                  "label": "Delete"
+                }
+              ],
+              [
+                "read",
+                {
+                  "type": "ref",
+                  "model": [
+                    "WvvglNnBnAcgvyNj",
+                    "uzIPZOqfqxvVVckk"
+                  ],
+                  "label": "Read"
+                }
+              ],
+              [
+                "update",
+                {
+                  "type": "ref",
+                  "model": [
+                    "WvvglNnBnAcgvyNj",
+                    "uzIPZOqfqxvVVckk"
+                  ],
+                  "label": "Update"
+                }
+              ]
+            ]
+          }
+        ]
+      ]
+    },
+    "displayKeyPaths": [
+      [
+        "name"
+      ]
+    ]
+  },
+  {
+    "model": [
+      "WvvglNnBnAcgvyNj",
+      "uzIPZOqfqxvVVckk"
+    ],
+    "color": "#E6CBB3",
+    "name": "Expression",
+    "slug": "_expression",
+    "field": {
+      "type": "recursive",
+      "topRecursionLabel": "function",
+      "fields": {
+        "data": {
+          "type": "union",
+          "fields": [
+            [
+              "bool",
+              "Bool",
+              {
+                "type": "bool",
+                "label": "Bool"
+              }
+            ],
+            [
+              "dateTime",
+              "Date Time",
+              {
+                "type": "dateTime",
+                "label": "Date Time"
+              }
+            ],
+            [
+              "expr",
+              "Expr",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "Expr"
+              }
+            ],
+            [
+              "float",
+              "Float",
+              {
+                "type": "number",
+                "storageType": "float",
+                "label": "Float"
+              }
+            ],
+            [
+              "int16",
+              "Int16",
+              {
+                "type": "number",
+                "storageType": "int16",
+                "label": "Int16"
+              }
+            ],
+            [
+              "int32",
+              "Int32",
+              {
+                "type": "number",
+                "storageType": "int32",
+                "label": "Int32"
+              }
+            ],
+            [
+              "int64",
+              "Int64",
+              {
+                "type": "number",
+                "storageType": "int64",
+                "label": "Int64"
+              }
+            ],
+            [
+              "int8",
+              "Int8",
+              {
+                "type": "number",
+                "storageType": "int8",
+                "label": "Int8"
+              }
+            ],
+            [
+              "list",
+              "List",
+              {
+                "type": "list",
+                "label": "List",
+                "field": {
+                  "type": "recurse",
+                  "recursionLabel": "data"
+                }
+              }
+            ],
+            [
+              "map",
+              "Map",
+              {
+                "type": "map",
+                "label": "Map",
+                "field": {
+                  "type": "recurse",
+                  "recursionLabel": "data"
+                }
+              }
+            ],
+            [
+              "null",
+              "Null",
+              {
+                "type": "null"
+              }
+            ],
+            [
+              "ref",
+              "Ref",
+              {
+                "type": "tuple",
+                "label": "Ref",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "string",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "string",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "set",
+              "Set",
+              {
+                "type": "set",
+                "label": "Set",
+                "field": {
+                  "type": "recurse",
+                  "recursionLabel": "data"
+                }
+              }
+            ],
+            [
+              "string",
+              "String",
+              {
+                "type": "string",
+                "label": "String"
+              }
+            ],
+            [
+              "struct",
+              "Struct",
+              {
+                "type": "map",
+                "label": "Struct",
+                "field": {
+                  "type": "recurse",
+                  "recursionLabel": "data"
+                }
+              }
+            ],
+            [
+              "symbol",
+              "Symbol",
+              {
+                "type": "string",
+                "label": "Symbol"
+              }
+            ],
+            [
+              "tuple",
+              "Tuple",
+              {
+                "type": "list",
+                "label": "Tuple",
+                "field": {
+                  "type": "recurse",
+                  "recursionLabel": "data"
+                }
+              }
+            ],
+            [
+              "uint16",
+              "Uint16",
+              {
+                "type": "number",
+                "storageType": "uint16",
+                "label": "Uint16"
+              }
+            ],
+            [
+              "uint32",
+              "Uint32",
+              {
+                "type": "number",
+                "storageType": "uint32",
+                "label": "Uint32"
+              }
+            ],
+            [
+              "uint64",
+              "Uint64",
+              {
+                "type": "number",
+                "storageType": "uint64",
+                "label": "Uint64"
+              }
+            ],
+            [
+              "uint8",
+              "Uint8",
+              {
+                "type": "number",
+                "storageType": "uint8",
+                "label": "Uint8"
+              }
+            ],
+            [
+              "union",
+              "Union",
+              {
+                "type": "tuple",
+                "label": "Union",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "string",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "data",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        },
+        "expression": {
+          "type": "union",
+          "fields": [
+            [
+              "addFloat",
+              "Add Float",
+              {
+                "type": "tuple",
+                "label": "Add Float",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "addInt16",
+              "Add Int16",
+              {
+                "type": "tuple",
+                "label": "Add Int16",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "addInt32",
+              "Add Int32",
+              {
+                "type": "tuple",
+                "label": "Add Int32",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "addInt64",
+              "Add Int64",
+              {
+                "type": "tuple",
+                "label": "Add Int64",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "addInt8",
+              "Add Int8",
+              {
+                "type": "tuple",
+                "label": "Add Int8",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "addUint16",
+              "Add Uint16",
+              {
+                "type": "tuple",
+                "label": "Add Uint16",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "addUint32",
+              "Add Uint32",
+              {
+                "type": "tuple",
+                "label": "Add Uint32",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "addUint64",
+              "Add Uint64",
+              {
+                "type": "tuple",
+                "label": "Add Uint64",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "addUint8",
+              "Add Uint8",
+              {
+                "type": "tuple",
+                "label": "Add Uint8",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "after",
+              "After",
+              {
+                "type": "tuple",
+                "label": "After",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "all",
+              "All",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "All"
+              }
+            ],
+            [
+              "allReferrers",
+              "All Referrers",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "All Referrers"
+              }
+            ],
+            [
+              "and",
+              "And",
+              {
+                "type": "list",
+                "label": "And",
+                "field": {
+                  "type": "recurse",
+                  "recursionLabel": "expression"
+                }
+              }
+            ],
+            [
+              "assertCase",
+              "Assert Case",
+              {
+                "type": "struct",
+                "label": "Assert Case",
+                "fields": [
+                  [
+                    "case",
+                    {
+                      "type": "string",
+                      "label": "Case"
+                    }
+                  ],
+                  [
+                    "value",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Value"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "assertModelRef",
+              "Assert Model Ref",
+              {
+                "type": "struct",
+                "label": "Assert Model Ref",
+                "fields": [
+                  [
+                    "ref",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Ref"
+                    }
+                  ],
+                  [
+                    "value",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Value"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "assertPresent",
+              "Assert Present",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "Assert Present"
+              }
+            ],
+            [
+              "before",
+              "Before",
+              {
+                "type": "tuple",
+                "label": "Before",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "bool",
+              "Bool",
+              {
+                "type": "bool",
+                "label": "Bool"
+              }
+            ],
+            [
+              "concatLists",
+              "Concat Lists",
+              {
+                "type": "tuple",
+                "label": "Concat Lists",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "create",
+              "Create",
+              {
+                "type": "tuple",
+                "label": "Create",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "function",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "createMultiple",
+              "Create Multiple",
+              {
+                "type": "tuple",
+                "label": "Create Multiple",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "map",
+                      "label": "Index 1",
+                      "field": {
+                        "type": "recurse",
+                        "recursionLabel": "function"
+                      }
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "currentUser",
+              "Current User",
+              {
+                "type": "struct",
+                "label": "Current User",
+                "fields": []
+              }
+            ],
+            [
+              "data",
+              "Data",
+              {
+                "type": "recurse",
+                "recursionLabel": "data",
+                "label": "Data"
+              }
+            ],
+            [
+              "dateTime",
+              "Date Time",
+              {
+                "type": "dateTime",
+                "label": "Date Time"
+              }
+            ],
+            [
+              "dateTimeNow",
+              "Date Time Now",
+              {
+                "type": "struct",
+                "label": "Date Time Now",
+                "fields": []
+              }
+            ],
+            [
+              "define",
+              "Define",
+              {
+                "type": "tuple",
+                "label": "Define",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "string",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "delete",
+              "Delete",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "Delete"
+              }
+            ],
+            [
+              "divFloat",
+              "Div Float",
+              {
+                "type": "tuple",
+                "label": "Div Float",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "divInt16",
+              "Div Int16",
+              {
+                "type": "tuple",
+                "label": "Div Int16",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "divInt32",
+              "Div Int32",
+              {
+                "type": "tuple",
+                "label": "Div Int32",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "divInt64",
+              "Div Int64",
+              {
+                "type": "tuple",
+                "label": "Div Int64",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "divInt8",
+              "Div Int8",
+              {
+                "type": "tuple",
+                "label": "Div Int8",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "divUint16",
+              "Div Uint16",
+              {
+                "type": "tuple",
+                "label": "Div Uint16",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "divUint32",
+              "Div Uint32",
+              {
+                "type": "tuple",
+                "label": "Div Uint32",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "divUint64",
+              "Div Uint64",
+              {
+                "type": "tuple",
+                "label": "Div Uint64",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "divUint8",
+              "Div Uint8",
+              {
+                "type": "tuple",
+                "label": "Div Uint8",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "equal",
+              "Equal",
+              {
+                "type": "tuple",
+                "label": "Equal",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "extractStrings",
+              "Extract Strings",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "Extract Strings"
+              }
+            ],
+            [
+              "field",
+              "Field",
+              {
+                "type": "tuple",
+                "label": "Field",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "string",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "filterList",
+              "Filter List",
+              {
+                "type": "tuple",
+                "label": "Filter List",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "function",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "first",
+              "First",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "First"
+              }
+            ],
+            [
+              "float",
+              "Float",
+              {
+                "type": "number",
+                "storageType": "float",
+                "label": "Float"
+              }
+            ],
+            [
+              "get",
+              "Get",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "Get"
+              }
+            ],
+            [
+              "graphFlow",
+              "Graph Flow",
+              {
+                "type": "struct",
+                "label": "Graph Flow",
+                "fields": [
+                  [
+                    "flow",
+                    {
+                      "type": "set",
+                      "label": "Flow",
+                      "field": {
+                        "type": "struct",
+                        "fields": [
+                          [
+                            "backward",
+                            {
+                              "type": "set",
+                              "label": "Backward",
+                              "field": {
+                                "type": "recurse",
+                                "recursionLabel": "expression"
+                              }
+                            }
+                          ],
+                          [
+                            "forward",
+                            {
+                              "type": "set",
+                              "label": "Forward",
+                              "field": {
+                                "type": "recurse",
+                                "recursionLabel": "expression"
+                              }
+                            }
+                          ],
+                          [
+                            "from",
+                            {
+                              "type": "recurse",
+                              "recursionLabel": "expression",
+                              "label": "From"
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  ],
+                  [
+                    "start",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Start"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "gtFloat",
+              "Gt Float",
+              {
+                "type": "tuple",
+                "label": "Gt Float",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "gtInt16",
+              "Gt Int16",
+              {
+                "type": "tuple",
+                "label": "Gt Int16",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "gtInt32",
+              "Gt Int32",
+              {
+                "type": "tuple",
+                "label": "Gt Int32",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "gtInt64",
+              "Gt Int64",
+              {
+                "type": "tuple",
+                "label": "Gt Int64",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "gtInt8",
+              "Gt Int8",
+              {
+                "type": "tuple",
+                "label": "Gt Int8",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "gtUint16",
+              "Gt Uint16",
+              {
+                "type": "tuple",
+                "label": "Gt Uint16",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "gtUint32",
+              "Gt Uint32",
+              {
+                "type": "tuple",
+                "label": "Gt Uint32",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "gtUint64",
+              "Gt Uint64",
+              {
+                "type": "tuple",
+                "label": "Gt Uint64",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "gtUint8",
+              "Gt Uint8",
+              {
+                "type": "tuple",
+                "label": "Gt Uint8",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "if",
+              "If",
+              {
+                "type": "struct",
+                "label": "If",
+                "fields": [
+                  [
+                    "condition",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Condition"
+                    }
+                  ],
+                  [
+                    "else",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Else"
+                    }
+                  ],
+                  [
+                    "then",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Then"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "inList",
+              "In List",
+              {
+                "type": "struct",
+                "label": "In List",
+                "fields": [
+                  [
+                    "in",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "In"
+                    }
+                  ],
+                  [
+                    "value",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Value"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "indexTuple",
+              "Index Tuple",
+              {
+                "type": "tuple",
+                "label": "Index Tuple",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "number",
+                      "storageType": "int64",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "int16",
+              "Int16",
+              {
+                "type": "number",
+                "storageType": "int16",
+                "label": "Int16"
+              }
+            ],
+            [
+              "int32",
+              "Int32",
+              {
+                "type": "number",
+                "storageType": "int32",
+                "label": "Int32"
+              }
+            ],
+            [
+              "int64",
+              "Int64",
+              {
+                "type": "number",
+                "storageType": "int64",
+                "label": "Int64"
+              }
+            ],
+            [
+              "int8",
+              "Int8",
+              {
+                "type": "number",
+                "storageType": "int8",
+                "label": "Int8"
+              }
+            ],
+            [
+              "isCase",
+              "Is Case",
+              {
+                "type": "struct",
+                "label": "Is Case",
+                "fields": [
+                  [
+                    "case",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Case"
+                    }
+                  ],
+                  [
+                    "value",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Value"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "isPresent",
+              "Is Present",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "Is Present"
+              }
+            ],
+            [
+              "joinStrings",
+              "Join Strings",
+              {
+                "type": "struct",
+                "label": "Join Strings",
+                "fields": [
+                  [
+                    "separator",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Separator"
+                    }
+                  ],
+                  [
+                    "strings",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Strings"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "key",
+              "Key",
+              {
+                "type": "tuple",
+                "label": "Key",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "leftFoldList",
+              "Left Fold List",
+              {
+                "type": "tuple",
+                "label": "Left Fold List",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ],
+                  [
+                    2,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "function",
+                      "label": "Index 2"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "length",
+              "Length",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "Length"
+              }
+            ],
+            [
+              "ltFloat",
+              "Lt Float",
+              {
+                "type": "tuple",
+                "label": "Lt Float",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "ltInt16",
+              "Lt Int16",
+              {
+                "type": "tuple",
+                "label": "Lt Int16",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "ltInt32",
+              "Lt Int32",
+              {
+                "type": "tuple",
+                "label": "Lt Int32",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "ltInt64",
+              "Lt Int64",
+              {
+                "type": "tuple",
+                "label": "Lt Int64",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "ltInt8",
+              "Lt Int8",
+              {
+                "type": "tuple",
+                "label": "Lt Int8",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "ltUint16",
+              "Lt Uint16",
+              {
+                "type": "tuple",
+                "label": "Lt Uint16",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "ltUint32",
+              "Lt Uint32",
+              {
+                "type": "tuple",
+                "label": "Lt Uint32",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "ltUint64",
+              "Lt Uint64",
+              {
+                "type": "tuple",
+                "label": "Lt Uint64",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "ltUint8",
+              "Lt Uint8",
+              {
+                "type": "tuple",
+                "label": "Lt Uint8",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "mapEnum",
+              "Map Enum",
+              {
+                "type": "struct",
+                "label": "Map Enum",
+                "fields": [
+                  [
+                    "default",
+                    {
+                      "type": "optional",
+                      "label": "Default",
+                      "field": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  [
+                    "mapping",
+                    {
+                      "type": "map",
+                      "label": "Mapping",
+                      "field": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  [
+                    "symbol",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Symbol"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "mapList",
+              "Map List",
+              {
+                "type": "tuple",
+                "label": "Map List",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "function",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "mapMap",
+              "Map Map",
+              {
+                "type": "tuple",
+                "label": "Map Map",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "function",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "mapSet",
+              "Map Set",
+              {
+                "type": "tuple",
+                "label": "Map Set",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "function",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "matchRegex",
+              "Match Regex",
+              {
+                "type": "struct",
+                "label": "Match Regex",
+                "fields": [
+                  [
+                    "caseInsensitive",
+                    {
+                      "type": "bool",
+                      "label": "Case Insensitive"
+                    }
+                  ],
+                  [
+                    "multiLine",
+                    {
+                      "type": "bool",
+                      "label": "Multi Line"
+                    }
+                  ],
+                  [
+                    "regex",
+                    {
+                      "type": "string",
+                      "label": "Regex"
+                    }
+                  ],
+                  [
+                    "value",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Value"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "memSort",
+              "Mem Sort",
+              {
+                "type": "tuple",
+                "label": "Mem Sort",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "function",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "memSortFunction",
+              "Mem Sort Function",
+              {
+                "type": "tuple",
+                "label": "Mem Sort Function",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "function",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "metarialize",
+              "Metarialize",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "Metarialize"
+              }
+            ],
+            [
+              "model",
+              "Model",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "Model"
+              }
+            ],
+            [
+              "modelOf",
+              "Model Of",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "Model Of"
+              }
+            ],
+            [
+              "mulFloat",
+              "Mul Float",
+              {
+                "type": "tuple",
+                "label": "Mul Float",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "mulInt16",
+              "Mul Int16",
+              {
+                "type": "tuple",
+                "label": "Mul Int16",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "mulInt32",
+              "Mul Int32",
+              {
+                "type": "tuple",
+                "label": "Mul Int32",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "mulInt64",
+              "Mul Int64",
+              {
+                "type": "tuple",
+                "label": "Mul Int64",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "mulInt8",
+              "Mul Int8",
+              {
+                "type": "tuple",
+                "label": "Mul Int8",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "mulUint16",
+              "Mul Uint16",
+              {
+                "type": "tuple",
+                "label": "Mul Uint16",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "mulUint32",
+              "Mul Uint32",
+              {
+                "type": "tuple",
+                "label": "Mul Uint32",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "mulUint64",
+              "Mul Uint64",
+              {
+                "type": "tuple",
+                "label": "Mul Uint64",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "mulUint8",
+              "Mul Uint8",
+              {
+                "type": "tuple",
+                "label": "Mul Uint8",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "not",
+              "Not",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "Not"
+              }
+            ],
+            [
+              "null",
+              "Null",
+              {
+                "type": "null"
+              }
+            ],
+            [
+              "or",
+              "Or",
+              {
+                "type": "list",
+                "label": "Or",
+                "field": {
+                  "type": "recurse",
+                  "recursionLabel": "expression"
+                }
+              }
+            ],
+            [
+              "presentOrZero",
+              "Present Or Zero",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "Present Or Zero"
+              }
+            ],
+            [
+              "reduceList",
+              "Reduce List",
+              {
+                "type": "struct",
+                "label": "Reduce List",
+                "fields": [
+                  [
+                    "initial",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Initial"
+                    }
+                  ],
+                  [
+                    "reducer",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "function",
+                      "label": "Reducer"
+                    }
+                  ],
+                  [
+                    "value",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Value"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "refTo",
+              "Ref To",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "Ref To"
+              }
+            ],
+            [
+              "referred",
+              "Referred",
+              {
+                "type": "struct",
+                "label": "Referred",
+                "fields": [
+                  [
+                    "from",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "From"
+                    }
+                  ],
+                  [
+                    "in",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "In"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "referrers",
+              "Referrers",
+              {
+                "type": "struct",
+                "label": "Referrers",
+                "fields": [
+                  [
+                    "in",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "In"
+                    }
+                  ],
+                  [
+                    "of",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Of"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "relocateRef",
+              "Relocate Ref",
+              {
+                "type": "struct",
+                "label": "Relocate Ref",
+                "fields": [
+                  [
+                    "model",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Model"
+                    }
+                  ],
+                  [
+                    "ref",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Ref"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "resolveAllRefs",
+              "Resolve All Refs",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "Resolve All Refs"
+              }
+            ],
+            [
+              "resolveRefs",
+              "Resolve Refs",
+              {
+                "type": "tuple",
+                "label": "Resolve Refs",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "set",
+                      "label": "Index 1",
+                      "field": {
+                        "type": "recurse",
+                        "recursionLabel": "expression"
+                      }
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "reverseList",
+              "Reverse List",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "Reverse List"
+              }
+            ],
+            [
+              "rightFoldList",
+              "Right Fold List",
+              {
+                "type": "tuple",
+                "label": "Right Fold List",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ],
+                  [
+                    2,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "function",
+                      "label": "Index 2"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "scope",
+              "Scope",
+              {
+                "type": "string",
+                "label": "Scope"
+              }
+            ],
+            [
+              "searchAllRegex",
+              "Search All Regex",
+              {
+                "type": "struct",
+                "label": "Search All Regex",
+                "fields": [
+                  [
+                    "caseInsensitive",
+                    {
+                      "type": "bool",
+                      "label": "Case Insensitive"
+                    }
+                  ],
+                  [
+                    "multiLine",
+                    {
+                      "type": "bool",
+                      "label": "Multi Line"
+                    }
+                  ],
+                  [
+                    "regex",
+                    {
+                      "type": "string",
+                      "label": "Regex"
+                    }
+                  ],
+                  [
+                    "value",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Value"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "searchRegex",
+              "Search Regex",
+              {
+                "type": "struct",
+                "label": "Search Regex",
+                "fields": [
+                  [
+                    "caseInsensitive",
+                    {
+                      "type": "bool",
+                      "label": "Case Insensitive"
+                    }
+                  ],
+                  [
+                    "multiLine",
+                    {
+                      "type": "bool",
+                      "label": "Multi Line"
+                    }
+                  ],
+                  [
+                    "regex",
+                    {
+                      "type": "string",
+                      "label": "Regex"
+                    }
+                  ],
+                  [
+                    "value",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Value"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "setField",
+              "Set Field",
+              {
+                "type": "struct",
+                "label": "Set Field",
+                "fields": [
+                  [
+                    "in",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "In"
+                    }
+                  ],
+                  [
+                    "name",
+                    {
+                      "type": "string",
+                      "label": "Name"
+                    }
+                  ],
+                  [
+                    "value",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Value"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "setKey",
+              "Set Key",
+              {
+                "type": "struct",
+                "label": "Set Key",
+                "fields": [
+                  [
+                    "in",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "In"
+                    }
+                  ],
+                  [
+                    "name",
+                    {
+                      "type": "string",
+                      "label": "Name"
+                    }
+                  ],
+                  [
+                    "value",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Value"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "signature",
+              "Signature",
+              {
+                "type": "recurse",
+                "recursionLabel": "function",
+                "label": "Signature"
+              }
+            ],
+            [
+              "slice",
+              "Slice",
+              {
+                "type": "struct",
+                "label": "Slice",
+                "fields": [
+                  [
+                    "length",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Length"
+                    }
+                  ],
+                  [
+                    "offset",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Offset"
+                    }
+                  ],
+                  [
+                    "value",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Value"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "string",
+              "String",
+              {
+                "type": "string",
+                "label": "String"
+              }
+            ],
+            [
+              "stringContains",
+              "String Contains",
+              {
+                "type": "tuple",
+                "label": "String Contains",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "stringToLower",
+              "String To Lower",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "String To Lower"
+              }
+            ],
+            [
+              "subFloat",
+              "Sub Float",
+              {
+                "type": "tuple",
+                "label": "Sub Float",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "subInt16",
+              "Sub Int16",
+              {
+                "type": "tuple",
+                "label": "Sub Int16",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "subInt32",
+              "Sub Int32",
+              {
+                "type": "tuple",
+                "label": "Sub Int32",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "subInt64",
+              "Sub Int64",
+              {
+                "type": "tuple",
+                "label": "Sub Int64",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "subInt8",
+              "Sub Int8",
+              {
+                "type": "tuple",
+                "label": "Sub Int8",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "subUint16",
+              "Sub Uint16",
+              {
+                "type": "tuple",
+                "label": "Sub Uint16",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "subUint32",
+              "Sub Uint32",
+              {
+                "type": "tuple",
+                "label": "Sub Uint32",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "subUint64",
+              "Sub Uint64",
+              {
+                "type": "tuple",
+                "label": "Sub Uint64",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "subUint8",
+              "Sub Uint8",
+              {
+                "type": "tuple",
+                "label": "Sub Uint8",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "substringIndex",
+              "Substring Index",
+              {
+                "type": "tuple",
+                "label": "Substring Index",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "switchCase",
+              "Switch Case",
+              {
+                "type": "tuple",
+                "label": "Switch Case",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "map",
+                      "label": "Index 1",
+                      "field": {
+                        "type": "recurse",
+                        "recursionLabel": "function"
+                      }
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "switchModelRef",
+              "Switch Model Ref",
+              {
+                "type": "struct",
+                "label": "Switch Model Ref",
+                "fields": [
+                  [
+                    "cases",
+                    {
+                      "type": "set",
+                      "label": "Cases",
+                      "field": {
+                        "type": "struct",
+                        "fields": [
+                          [
+                            "match",
+                            {
+                              "type": "recurse",
+                              "recursionLabel": "expression",
+                              "label": "Match"
+                            }
+                          ],
+                          [
+                            "return",
+                            {
+                              "type": "recurse",
+                              "recursionLabel": "function",
+                              "label": "Return"
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  ],
+                  [
+                    "default",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Default"
+                    }
+                  ],
+                  [
+                    "value",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Value"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "symbol",
+              "Symbol",
+              {
+                "type": "string",
+                "label": "Symbol"
+              }
+            ],
+            [
+              "tag",
+              "Tag",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "Tag"
+              }
+            ],
+            [
+              "tagExists",
+              "Tag Exists",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "Tag Exists"
+              }
+            ],
+            [
+              "toFloat",
+              "To Float",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "To Float"
+              }
+            ],
+            [
+              "toInt16",
+              "To Int16",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "To Int16"
+              }
+            ],
+            [
+              "toInt32",
+              "To Int32",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "To Int32"
+              }
+            ],
+            [
+              "toInt64",
+              "To Int64",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "To Int64"
+              }
+            ],
+            [
+              "toInt8",
+              "To Int8",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "To Int8"
+              }
+            ],
+            [
+              "toUint16",
+              "To Uint16",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "To Uint16"
+              }
+            ],
+            [
+              "toUint32",
+              "To Uint32",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "To Uint32"
+              }
+            ],
+            [
+              "toUint64",
+              "To Uint64",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "To Uint64"
+              }
+            ],
+            [
+              "toUint8",
+              "To Uint8",
+              {
+                "type": "recurse",
+                "recursionLabel": "expression",
+                "label": "To Uint8"
+              }
+            ],
+            [
+              "uint16",
+              "Uint16",
+              {
+                "type": "number",
+                "storageType": "uint16",
+                "label": "Uint16"
+              }
+            ],
+            [
+              "uint32",
+              "Uint32",
+              {
+                "type": "number",
+                "storageType": "uint32",
+                "label": "Uint32"
+              }
+            ],
+            [
+              "uint64",
+              "Uint64",
+              {
+                "type": "number",
+                "storageType": "uint64",
+                "label": "Uint64"
+              }
+            ],
+            [
+              "uint8",
+              "Uint8",
+              {
+                "type": "number",
+                "storageType": "uint8",
+                "label": "Uint8"
+              }
+            ],
+            [
+              "update",
+              "Update",
+              {
+                "type": "struct",
+                "label": "Update",
+                "fields": [
+                  [
+                    "ref",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Ref"
+                    }
+                  ],
+                  [
+                    "value",
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Value"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "with",
+              "With",
+              {
+                "type": "tuple",
+                "label": "With",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "expression",
+                      "label": "Index 0"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "recurse",
+                      "recursionLabel": "function",
+                      "label": "Index 1"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "zero",
+              "Zero",
+              {
+                "type": "struct",
+                "label": "Zero",
+                "fields": []
+              }
+            ]
+          ]
+        },
+        "function": {
+          "type": "union",
+          "fields": [
+            [
+              "function",
+              "Function",
+              {
+                "type": "tuple",
+                "label": "Function",
+                "fields": [
+                  [
+                    0,
+                    {
+                      "type": "list",
+                      "label": "Index 0",
+                      "field": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "type": "list",
+                      "label": "Index 1",
+                      "field": {
+                        "type": "recurse",
+                        "recursionLabel": "expression"
+                      }
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      }
+    },
+    "displayKeyPaths": []
+  },
+  {
+    "model": [
+      "WvvglNnBnAcgvyNj",
+      "yHEWMkwcfHRTJFYY"
+    ],
+    "color": "#E6B3BD",
+    "name": "Tag",
+    "slug": "_tag",
+    "field": {
+      "type": "struct",
+      "label": "Tag",
+      "fields": [
+        [
+          "tag",
+          {
+            "type": "string",
+            "label": "Tag"
+          }
+        ],
+        [
+          "model",
+          {
+            "type": "ref",
+            "model": [
+              "WvvglNnBnAcgvyNj",
+              "WvvglNnBnAcgvyNj"
+            ],
+            "label": "Model"
+          }
+        ]
+      ]
+    },
+    "displayKeyPaths": [
+      [
+        "tag"
+      ]
+    ]
+  }
+]
