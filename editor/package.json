@@ -4,7 +4,7 @@
   "description": "cosanum inventory",
   "main": "index.js",
   "scripts": {
-    "editor": "npx karma-editor build && KARMA_DATA_URL=http://localhost:8005 npx karma-editor server"
+    "editor": "npx karma-editor build && KARMA_DATA_URL=http://localhost:8015 npx karma-editor server"
   },
   "repository": {
     "type": "git",
