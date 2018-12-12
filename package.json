@@ -4,9 +4,7 @@
   "description": "karma demo",
   "main": "index.js",
   "scripts": {
-    "tools": "npx karma-tools -h",
     "karma": "npx karma-tools run-karma -n karma-demo",
-    "fixtures": "npx karma-tools reset -q && npx karma-tools fixtures ./fixtures",
     "migration": "node migrations/Example.js"
   },
   "keywords": [],
