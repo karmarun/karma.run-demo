@@ -1,19 +1,15 @@
-require('dotenv').config()
-const { addModel, guid, migrateModelByTag, makeMigration } = require('karma-tools')
+const mig = require('@karma.run/sdk/migration')
+const { KARMA_INSTANCE_SECRET } = process.env
 
-const {KARMA_INSTANCE_SECRET} = process.env
+main().catch(console.error)
 
-const migrationConfig = {
-  source: {
-    endpoint: 'http://localhost:8005/',
-    username: 'admin',
-    password: KARMA_INSTANCE_SECRET,
-  },
-  target: {
-    endpoint: 'http://localhost:8015/',
-    username: 'admin',
-    password: KARMA_INSTANCE_SECRET,
-  }
+async function main() {
+  let clientSource = new t.Remote('http://karma:80/')
+  let clientTarget = new t.Remote('http://karma-etl:80/')
+  let sourceSession = await clientSource.adminLogin(KARMA_INSTANCE_SECRET)
+  let targetSession = await clientTarget.adminLogin(KARMA_INSTANCE_SECRET)
+
+  await mig.migrate(sourceSession, targetSession, migration).catch(console.error)
 }
 
 function migration(image, oldTags, newTags) {
@@ -28,7 +24,6 @@ function migration(image, oldTags, newTags) {
 
   migrateModelByTag(image, oldTags, newTags, 'modelA',
     (model) => {
-      console.log(model)
       model.struct.example = {
         "string": {}
       }
@@ -41,6 +36,3 @@ function migration(image, oldTags, newTags) {
 
   return image
 }
-
-makeMigration(migration, migrationConfig, './temp')
-  .catch(console.error)

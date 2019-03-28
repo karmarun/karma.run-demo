@@ -35,10 +35,45 @@ async function main() {
     refToModelA: m.dynamicRef('modelA')
   })
 
-  const result = await session.do(u.createModels({ modelA, modelB }))
+  let result = await session.do(u.createModelsAndTags({ modelA, modelB }))
   console.log(result)
 
-  const expressionTest = e.func(
+  let ref = await session.do(
+    e.create(
+      e.tag('modelA'),
+      arg => e.data(v.struct({
+        'valueA': v.string('my string'),
+      }).toDataConstructor())
+    )
+  )
+  console.log(ref)
+
+  result = await session.do(
+    e.create(
+      e.tag('modelB'),
+      arg => e.data(v.struct({
+        'myString': v.string('red'),
+        'myPassword': v.string('$2y$12$/zA6CG8XPvgjQMtyLKybNOyTA4oNj3jkkVw.JLh/sHfvLgGsTV8Mu'),
+        'myOptionalInt': v.int16(1),
+        'refToModelA': v.ref(ref),
+        'myList': v.list([
+          v.struct({
+            myString: v.string('my password'),
+            myInt: v.int16(1),
+          })
+        ]),
+      }).toDataConstructor())
+    )
+  )
+  console.log(result)
+
+  await createExpression(session)
+}
+
+
+async function createExpression(session) {
+
+  const expression = e.func(
     param => e.switchModelRef(
       param,
       e.bool(true),
@@ -50,20 +85,24 @@ async function main() {
         {
           match: e.tag('modelA'),
           return: value => e.equal(
-            e.field('myString', value),
-            e.data(v.string("aaa").toDataConstructor())
+            // e.field('myString', value), // fix e.field
+            e.data(v.string("aaa").toDataConstructor()),
+            e.data(v.string("aaa").toDataConstructor()),
           )
         }
       ]
     )
   )
 
-  // session.do(
-  //   e.define('ex',
-  //     e.create(
-  //       e.tag('_expression'),
-  //       arg => e.data(expressionTest.toValue().toDataConstructor())
-  //     )
-  //   )
-  // )
+  try {
+    await session.do(
+      e.create(
+        e.tag('_expression'),
+        arg => e.data(expression.toValue().toDataConstructor())
+      )
+    )
+  }
+  catch (e) {
+    console.log(e.response.data.humanReadableError.human)
+  }
 }
