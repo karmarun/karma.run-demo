@@ -10,10 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "optionalDependencies": {
-    "karma-tools": "git+https://github.com/dudagroup/karma-tools.git#Karma_0.5.0"
-  },
   "dependencies": {
-    "@karma.run/sdk": "^0.6.0-beta.0"
+    "@karma.run/sdk": "^0.6.0-beta.1"
   }
 }

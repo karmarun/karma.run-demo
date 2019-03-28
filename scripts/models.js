@@ -1,22 +1,20 @@
-require('dotenv').config()
-
 const t = require('@karma.run/sdk')
 const e = require('@karma.run/sdk/expression')
 const m = require('@karma.run/sdk/model')
 const v = require('@karma.run/sdk/value')
 const u = require('@karma.run/sdk/utility')
 
-const { KARMA_ENDPOINT, KARMA_INSTANCE_SECRET } = process.env
+const { KARMA_INSTANCE_SECRET } = process.env
 
 main().catch(console.error)
 
 async function main() {
-  let client = new t.Remote(KARMA_ENDPOINT)
+  let client = new t.Remote('http://karma:80')
   let session
 
-  session = await client.adminLogin('admin', KARMA_INSTANCE_SECRET)
+  session = await client.adminLogin(KARMA_INSTANCE_SECRET)
   await session.resetDatabase()
-  session = await client.adminLogin('admin', KARMA_INSTANCE_SECRET)
+  session = await client.adminLogin(KARMA_INSTANCE_SECRET)
 
   const modelA = m.struct({
     valueA: m.string,
@@ -37,9 +35,8 @@ async function main() {
     refToModelA: m.dynamicRef('modelA')
   })
 
-  await session.do(u.createModels({ modelA, modelB }))
-
-
+  const result = await session.do(u.createModels({ modelA, modelB }))
+  console.log(result)
 
   const expressionTest = e.func(
     param => e.switchModelRef(
@@ -54,20 +51,19 @@ async function main() {
           match: e.tag('modelA'),
           return: value => e.equal(
             e.field('myString', value),
-            e.data(d.string("aaa").toDataConstructor())
+            e.data(v.string("aaa").toDataConstructor())
           )
         }
       ]
     )
   )
 
-  session.do(
-    e.define('ex',
-      e.create(
-        e.tag('_expression'),
-        arg => e.data(expressionTest.toValue().toDataConstructor())
-      )
-    )
-
-  )
+  // session.do(
+  //   e.define('ex',
+  //     e.create(
+  //       e.tag('_expression'),
+  //       arg => e.data(expressionTest.toValue().toDataConstructor())
+  //     )
+  //   )
+  // )
 }

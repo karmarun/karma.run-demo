@@ -1,0 +1,55 @@
+version: '3'
+services:
+
+  node:
+    container_name: node
+    image: node
+    depends_on:
+      - karma
+      - karma-etl
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/usr/src/service
+    working_dir: /usr/src/service
+    env_file:
+      - .env
+    command: node ./scripts/server.js
+
+  karma:
+    container_name: karma_demo
+    ports:
+        - "8005:80"
+    image: karmarun/karma.run:1.0.0
+    env_file:
+      - .env
+    environment:
+      - KARMA_DATA_FILE=/dbs/db-karma-run.data
+    volumes:
+      - karma-demo-data:/dbs
+
+  karma-etl:
+    container_name: karma_demo_etl
+    ports:
+        - "8015:80"
+    image: karmarun/karma.run:1.0.0
+    env_file:
+      - .env
+    environment:
+      - DATA_FILE=/dbs/db-karma-run.data
+    volumes:
+      - karma-demo-data-etl:/dbs
+
+  editor:
+    container_name: editor
+    build: ./editor
+    depends_on:
+      - karma
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/service
+
+volumes:
+  karma-demo-data:
+  karma-demo-data-etl:

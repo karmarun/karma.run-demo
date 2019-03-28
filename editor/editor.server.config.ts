@@ -2,7 +2,7 @@ import { ServerConfiguration } from '@karma.run/editor'
 
 export default {
   port: 3000,
-  karmaDataURL: process.env.KARMA_DATA_URL,
+  karmaDataURL: 'http://karma:80',
   plugins: [],
   editorContexts: (roles: string[], tagMap: ReadonlyMap<string, any>) =>
     [
