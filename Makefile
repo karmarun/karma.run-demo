@@ -7,11 +7,14 @@ install:
 models:
 		docker exec -ti node node ./scripts/models.js
 
-query:
+queries:
 		docker exec -ti node node ./scripts/queries.js
 
 migration:
 		docker exec -ti node node ./scripts/migration.js
+
+export:
+		docker exec -ti node node ./scripts/export.js
 
 dev:
 		docker-compose up
