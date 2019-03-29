@@ -16,5 +16,8 @@ migration:
 export:
 		docker exec -ti node node ./scripts/export.js
 
+import:
+		docker exec -ti node node ./scripts/import.js
+
 dev:
 		docker-compose up

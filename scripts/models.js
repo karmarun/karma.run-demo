@@ -1,65 +1,65 @@
-const t = require('@karma.run/sdk')
-const e = require('@karma.run/sdk/expression')
-const m = require('@karma.run/sdk/model')
-const v = require('@karma.run/sdk/value')
-const u = require('@karma.run/sdk/utility')
+const { Remote } = require('@karma.run/sdk')
+const xpr = require('@karma.run/sdk/expression')
+const mdl = require('@karma.run/sdk/model')
+const val = require('@karma.run/sdk/value')
+const utl = require('@karma.run/sdk/utility')
 
 const { KARMA_INSTANCE_SECRET } = process.env
 
 main().catch(console.error)
 
 async function main() {
-  let client = new t.Remote('http://karma:80')
+  let client = new Remote('http://karma:80')
   let session
 
   session = await client.adminLogin(KARMA_INSTANCE_SECRET)
   await session.resetDatabase()
   session = await client.adminLogin(KARMA_INSTANCE_SECRET)
 
-  const modelA = m.struct({
-    valueA: m.string,
+  const modelA = mdl.struct({
+    valueA: mdl.string,
   })
 
-  const modelB = m.struct({
-    myString: m.string,
-    myPassword: m.string,
-    myOptionalInt: m.optional(
-      m.int16
+  const modelB = mdl.struct({
+    myString: mdl.string,
+    myPassword: mdl.string,
+    myOptionalInt: mdl.optional(
+      mdl.int16
     ),
-    myList: m.list(
-      m.struct({
-        myString: m.string,
-        myInt: m.int16,
+    myList: mdl.list(
+      mdl.struct({
+        myString: mdl.string,
+        myInt: mdl.int16,
       })
     ),
-    refToModelA: m.dynamicRef('modelA')
+    refToModelA: mdl.dynamicRef('modelA')
   })
 
-  let result = await session.do(u.createModelsAndTags({ modelA, modelB }))
+  let result = await session.do(utl.createModelsAndTags({ modelA, modelB }))
   console.log(result)
 
   let ref = await session.do(
-    e.create(
-      e.tag('modelA'),
-      arg => e.data(v.struct({
-        'valueA': v.string('my string'),
+    xpr.create(
+      xpr.tag('modelA'),
+      arg => xpr.data(val.struct({
+        'valueA': val.string('my string'),
       }).toDataConstructor())
     )
   )
   console.log(ref)
 
   result = await session.do(
-    e.create(
-      e.tag('modelB'),
-      arg => e.data(v.struct({
-        'myString': v.string('red'),
-        'myPassword': v.string('$2y$12$/zA6CG8XPvgjQMtyLKybNOyTA4oNj3jkkVw.JLh/sHfvLgGsTV8Mu'),
-        'myOptionalInt': v.int16(1),
-        'refToModelA': v.ref(ref),
-        'myList': v.list([
-          v.struct({
-            myString: v.string('my password'),
-            myInt: v.int16(1),
+    xpr.create(
+      xpr.tag('modelB'),
+      arg => xpr.data(val.struct({
+        'myString': val.string('red'),
+        'myPassword': val.string('$2y$12$/zA6CG8XPvgjQMtyLKybNOyTA4oNj3jkkVw.JLh/sHfvLgGsTV8Mu'),
+        'myOptionalInt': val.int16(1),
+        'refToModelA': val.ref(ref),
+        'myList': val.list([
+          val.struct({
+            myString: val.string('my password'),
+            myInt: val.int16(1),
           })
         ]),
       }).toDataConstructor())
@@ -73,21 +73,21 @@ async function main() {
 
 async function createExpression(session) {
 
-  const expression = e.func(
-    param => e.switchModelRef(
+  const expression = xpr.func(
+    param => xpr.switchModelRef(
       param,
-      e.bool(true),
+      xpr.bool(true),
       [
         {
-          match: e.tag('_role'),
-          return: value => e.bool(true)
+          match: xpr.tag('_role'),
+          return: value => xpr.bool(true)
         },
         {
-          match: e.tag('modelA'),
-          return: value => e.equal(
-            // e.field('myString', value), // fix e.field
-            e.data(v.string("aaa").toDataConstructor()),
-            e.data(v.string("aaa").toDataConstructor()),
+          match: xpr.tag('modelA'),
+          return: value => xpr.equal(
+            // xpr.field('myString', value), // fix xpr.field
+            xpr.data(val.string("aaa").toDataConstructor()),
+            xpr.data(val.string("aaa").toDataConstructor()),
           )
         }
       ]
@@ -96,13 +96,13 @@ async function createExpression(session) {
 
   try {
     await session.do(
-      e.create(
-        e.tag('_expression'),
-        arg => e.data(expression.toValue().toDataConstructor())
+      xpr.create(
+        xpr.tag('_expression'),
+        arg => xpr.data(expression.toValue().toDataConstructor())
       )
     )
   }
   catch (e) {
-    console.log(e.response.data.humanReadableError.human)
+    consolxpr.log(xpr.responsxpr.data.humanReadableError.human)
   }
 }

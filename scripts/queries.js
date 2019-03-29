@@ -1,34 +1,34 @@
-const t = require('@karma.run/sdk')
-const e = require('@karma.run/sdk/expression')
-const m = require('@karma.run/sdk/model')
-const v = require('@karma.run/sdk/value')
-const u = require('@karma.run/sdk/utility')
+const { Remote } = require('@karma.run/sdk')
+const xpr = require('@karma.run/sdk/expression')
+const mdl = require('@karma.run/sdk/model')
+const val = require('@karma.run/sdk/value')
+const utl = require('@karma.run/sdk/utility')
 
 const { KARMA_INSTANCE_SECRET } = process.env
 
 main().catch(console.error)
 
 async function main() {
-  const client = new t.Remote('http://karma:80')
+  const client = new Remote('http://karma:80')
   const session = await client.login('admin', KARMA_INSTANCE_SECRET)
 
   let result = await session.do(
-    e.all(e.tag("_tag"))
+    xpr.all(xpr.tag("_tag"))
   )
   console.log(JSON.stringify(result, null, 2), '\n\n')
 
   result = await session.do(
-    e.all(e.tag("modelA"))
+    xpr.all(xpr.tag("modelA"))
   )
   console.log(JSON.stringify(result, null, 2), '\n\n')
 
   result = await session.do(
-    e.filterList(
-      e.all(e.tag("modelB")),
+    xpr.filterList(
+      xpr.all(xpr.tag("modelB")),
       (index, value) => {
-        return e.equal(
-          e.field('myString', value),
-          e.data(v.string("red").toDataConstructor())
+        return xpr.equal(
+          xpr.field('myString', value),
+          xpr.data(val.string("red").toDataConstructor())
         )
       }
     )
